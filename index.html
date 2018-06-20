@@ -3,14 +3,9 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<title>Telefonbuch</title>
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-animate.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-sanitize.js"></script>
-		<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>	   
-		<script src="controller.js"></script>
 		
 		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" > 
 		
 		<style>
 			th, td {padding: 1px}
@@ -20,7 +15,8 @@
 
 	<body ng-controller="appController">
 		<div class="container">
-			<h2>Telefonbuch</h2>
+			<h2>Telefonbuch </h2> 
+			
 			<hr />
 			<!-- Eintrag hinzufuegen, suchen -->
 			<div class="row">
@@ -53,6 +49,7 @@
 								<th>Nachname</th>
 								<th>Ort</th>
 								<th>Telefon</th>
+								<th>Erstelldatum</th>
 								<th >Aktion</th>
 							</tr>
 						</thead>
@@ -63,6 +60,7 @@
 								<td>{{eintrag.nachname}}</td>
 								<td>{{eintrag.ort}}</td>
 								<td>{{eintrag.telefon}}</td>
+								<td>{{eintrag.erstelldatum}}</td>
 								<td ><button type="submit" title="Eintrag editieren" class="btn btn-warning" ng-click="editRow(eintrag)" ><i class="fa fa-pencil-square-o" ></i> </button>
 									<button type="submit" title="Eintrag löschen" class="btn btn-danger" ng-click="removeRow(eintrag.id)"><i class="fa fa-trash-o" ></i> </button>
 								</td>
@@ -123,6 +121,14 @@
 		</div>
 		
 
-	
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-animate.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-sanitize.js"></script>
+		<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>	   
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.2.0/angular-moment.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+		<script src="controller.js"></script>	
 	</body>
 </html>

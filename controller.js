@@ -1,9 +1,11 @@
-var app = angular.module('app', ['ui.bootstrap']);
-app.controller('appController', function ($scope, $uibModal, $log) {
+var app = angular.module('app', ['ui.bootstrap', 'angularMoment']);
+app.controller('appController', function ($scope, $uibModal, moment, $log) {
+	moment.locale('de'); 
+	$scope.date = new moment();
 	
 	$scope.eintraege=[
-		 {id:1, vorname: "Donald", nachname: "Duck", ort: "Entenhausen", telefon: "555-0815"}
-		,{id:2, vorname: "Peter", nachname: "Pan", ort: "Nimmerland", telefon: "555-1234"}
+		 {id:1, vorname: "Donald", nachname: "Duck", ort: "Entenhausen", telefon: "555-0815", erstelldatum: "18.06.2018 00:00:00"}
+		,{id:2, vorname: "Peter", nachname: "Pan", ort: "Nimmerland", telefon: "555-1234", erstelldatum: "18.06.2018 00:00:00"}
 	];
 	
 	$scope.lastId = $scope.eintraege.length; // Id des letzten Eintrags vorhalten
@@ -19,6 +21,7 @@ app.controller('appController', function ($scope, $uibModal, $log) {
 			nachname: props[1],
 			ort: props[2],
 			telefon: props[3],
+			erstelldatum: new moment().format('DD.MM.YYYY HH:mm:ss')
 		});
 		$scope.inputEintrag = ''; // Textfeld leeren
 	};
@@ -48,7 +51,8 @@ app.controller('appController', function ($scope, $uibModal, $log) {
 			vorname: row.vorname,
 			nachname: row.nachname,
 			ort: row.ort,
-			telefon: row.telefon
+			telefon: row.telefon,
+			erstelldatum: row.erstelldatum 
 		};
 		
 		//Eintrag dem Bearbeiten Dialog uebergeben
