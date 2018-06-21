@@ -17,7 +17,7 @@ Im oberen linken Bereich befindet sich ein Eingabefeld zum Hinzufügen neuer Ein
 Das Absetzen eines einzelnen Begriffs trägt lediglich eine neue Zeile mit einem Vornamen ein. 
 Sollen für einen Eintrag alle Eigenschaften gesetzt werden, kann die Eingabe kommasepariert erfolgen.
 
-***Beispieleintrag ohne Ort:**
+***Beispieleintrag ohne Ort:***
 
     Vorname: Peter
     Nachname: Pan
